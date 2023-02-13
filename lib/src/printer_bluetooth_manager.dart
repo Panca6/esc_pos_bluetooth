@@ -8,7 +8,7 @@
 
 import 'dart:async';
 import 'dart:io';
-import 'package:esc_pos_utils/esc_pos_utils.dart';
+
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter_bluetooth_basic/flutter_bluetooth_basic.dart';
 import './enums.dart';
@@ -116,7 +116,7 @@ class PrinterBluetoothManager {
 
             completer.complete(PosPrintResult.success);
           }
-          // TODO sending disconnect signal should be event-based
+ 
           _runDelayed(3).then((dynamic v) async {
             await _bluetoothManager.disconnect();
             _isPrinting = false;
